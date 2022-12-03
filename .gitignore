@@ -1,5 +1,7 @@
 node_modules/
 nest-diagrams/
+/messages.json
+/requests.http
 
 # compiled output
 /dist
