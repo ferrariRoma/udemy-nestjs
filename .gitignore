@@ -2,6 +2,7 @@ node_modules/
 nest-diagrams/
 /messages.json
 /requests.http
+/db.sqlite
 
 # compiled output
 /dist
