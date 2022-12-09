@@ -13,7 +13,7 @@ export class UsersService {
   }
 
   findOne(id: number) {
-    return this.repo.find({ where: { id } });
+    return this.repo.findOne({ where: { id } });
   }
 
   find(email: string) {
@@ -22,11 +22,15 @@ export class UsersService {
 
   async update(id: number, attrs: Partial<User>) {
     const user = await this.findOne(id);
+    console.log('before user ::: ', user);
     if (!user) {
       throw new Error('User not found');
     }
 
     Object.assign(user, attrs);
+
+    console.log('attrs ::: ', attrs);
+    console.log('user ::: ', user);
     return this.repo.save(user);
   }
 
