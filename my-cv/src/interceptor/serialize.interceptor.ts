@@ -7,10 +7,17 @@ import {
 import { plainToClass } from 'class-transformer';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
-import { UserInterceptorDto } from 'src/users/dtos/user-interceptor.dto';
 
-export class SerializeInterceptor implements NestInterceptor {
-  constructor(private dto: any) {}
+interface IClassConstructor {
+  new (...args: any[]): {};
+}
+
+export function Serialize(dto: IClassConstructor) {
+  return UseInterceptors(new SerializeInterceptor(dto));
+}
+
+class SerializeInterceptor implements NestInterceptor {
+  constructor(private dto: IClassConstructor) {}
   intercept(
     context: ExecutionContext,
     next: CallHandler<any>,
