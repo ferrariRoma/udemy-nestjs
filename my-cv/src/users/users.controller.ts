@@ -10,6 +10,7 @@ import {
   NotFoundException,
 } from '@nestjs/common';
 import { Serialize } from 'src/interceptor/serialize.interceptor';
+import { AuthService } from './auth.service';
 import { CreateUserDto } from './dtos/create-user.dto';
 import { UpdateUserDto } from './dtos/update-user.dto';
 import { UserInterceptorDto } from './dtos/user-interceptor.dto';
@@ -18,11 +19,14 @@ import { UsersService } from './users.service';
 @Controller('auth')
 @Serialize(UserInterceptorDto)
 export class UsersController {
-  constructor(private usersService: UsersService) {}
+  constructor(
+    private usersService: UsersService,
+    private authService: AuthService,
+  ) {}
 
   @Post('/signup')
   createUser(@Body() { email, password }: CreateUserDto) {
-    this.usersService.create(email, password);
+    return this.authService.signup(email, password);
   }
 
   @Get('/:id')
