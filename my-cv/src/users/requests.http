@@ -3,7 +3,22 @@ POST http://localhost:3000/auth/signup
 content-type: application/json
 
 {
-    "email" : "testSecond@example.com",
+    "email" : "testThird@example.com",
+    "password" : "aaabbbccc"
+}
+
+### Get the currently signed in user!
+GET http://localhost:3000/auth/whoami
+
+### Sign out
+POST http://localhost:3000/auth/signout
+
+### Sign in as an existing user
+POST http://localhost:3000/auth/signin
+content-type: application/json
+
+{
+    "email" : "testThird@example.com",
     "password" : "aaabbbccc"
 }
 
