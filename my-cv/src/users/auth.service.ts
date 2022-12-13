@@ -17,7 +17,7 @@ export class AuthService {
     // See if email is in use
     const existedUsers = await this.usersService.find(email);
     if (!existedUsers) {
-      throw new BadRequestException('Email in use');
+      throw new BadRequestException('Email already in use');
     }
     // Hash the users password
     // Generate a salt
