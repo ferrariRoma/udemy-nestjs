@@ -3,7 +3,7 @@ nest-diagrams/
 /messages.json
 /requests.http
 /db.sqlite
-/.env
+/.env.*
 
 # compiled output
 /dist
