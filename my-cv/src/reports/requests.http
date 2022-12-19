@@ -1,0 +1,23 @@
+### Create report
+POST http://localhost:3000/reports
+content-type: application/json
+
+{
+    "make" : "kia",
+    "model" : "K3",
+    "year" : 1980,
+    "mileage" : 100090,
+    "lng" : 0,
+    "lat" : 0,
+    "price" : 540399898
+}
+
+
+
+### Approve an existing report
+PATCH http://localhost:3000/reports/9
+content-type: application/json
+
+{
+    "approved" : true
+}
