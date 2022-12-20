@@ -38,7 +38,6 @@ const cookieSession = require('cookie-session');
       useValue: new ValidationPipe({
         whitelist: true,
         forbidNonWhitelisted: true,
-        transform: true,
       }),
     },
   ],
