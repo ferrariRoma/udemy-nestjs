@@ -4,12 +4,12 @@ content-type: application/json
 
 {
     "make" : "kia",
-    "model" : "K3",
-    "year" : 1980,
-    "mileage" : 100090,
-    "lng" : 0,
-    "lat" : 0,
-    "price" : 540399898
+    "model" : "k7",
+    "year" : 2016,
+    "mileage" : 8005090,
+    "lng" : 41,
+    "lat" : 45,
+    "price" : 140391778
 }
 
 
@@ -21,3 +21,6 @@ content-type: application/json
 {
     "approved" : true
 }
+
+### Get estimate for an existing vehicle
+GET http://localhost:3000/reports?make=kia&model=k7&lng=40&lat=40&mileage=4005090&year=2015
